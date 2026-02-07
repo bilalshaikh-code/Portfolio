@@ -2,10 +2,10 @@
 
 ## Demo
 
-![Home Page](Asset/screenshot_1.png)
-![Project Page](Asset/screenshot_2.png)
-![Resume Page](Asset/screenshot_3.png)
-![Contact Page](Asset/screenshot_4.png)
+![Home Page](Asset/Screenshot_1.png)
+![Project Page](Asset/Screenshot_2.png)
+![Resume Page](Asset/Screenshot_3.png)
+![Contact Page](Asset/Screenshot_4.png)
 
 ## Prerequisites
 
