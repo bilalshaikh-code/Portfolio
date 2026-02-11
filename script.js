@@ -1,70 +1,61 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const navLinks = document.querySelectorAll(".nav-menu a[data-target]");
-  const sections = document.querySelectorAll(".right-box section");
+  const sections = document.querySelectorAll("section");
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
+  const closeMenu = document.querySelector(".close-menu");
   const darkToggle = document.querySelector(".dark-toggle");
 
-  // Show section
-  function showSection(id, updateHash = true) {
-    sections.forEach(section => section.classList.remove("active"));
+  // Function to show a section
+  function showSection(id) {
+    sections.forEach(sec => sec.classList.remove("active"));
     navLinks.forEach(link => link.classList.remove("active"));
 
     const targetSection = document.getElementById(id);
-    const activeLink = document.querySelector(`.nav-menu a[data-target="${id}"]`);
-
     if (targetSection) targetSection.classList.add("active");
-    if (activeLink) activeLink.classList.add("active");
 
-    if (updateHash) history.pushState(null, "", `#${id}`);
+    const targetLink = document.querySelector(`[data-target="${id}"]`);
+    if (targetLink) targetLink.classList.add("active");
   }
 
-  // Menu toggle
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-  });
-
-  // Close menu when click link
+  // Navigation link click
   navLinks.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
-      const target = link.dataset.target;
-      showSection(target);
+      showSection(link.dataset.target);
       navMenu.classList.remove("open");
     });
-
-    link.addEventListener("keydown", e => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        showSection(link.dataset.target);
-        navMenu.classList.remove("open");
-      }
-    });
   });
 
-  // Dark mode
+  // Hamburger menu toggle
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.add("open");
+  });
+
+  // Close menu button
+  closeMenu.addEventListener("click", () => {
+    navMenu.classList.remove("open");
+  });
+
+  // Dark mode toggle with animation
   darkToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    const isDark = document.body.classList.contains("dark");
+    const isDark = document.body.classList.toggle("dark");
+
+    // Save preference in localStorage
     localStorage.setItem("darkMode", isDark);
+
+    // Optional: add a small animation class
+    darkToggle.classList.add("toggle-animate");
+    setTimeout(() => darkToggle.classList.remove("toggle-animate"), 400);
   });
 
-  // Load dark mode from localStorage
+  // Apply dark mode from previous session
   if (localStorage.getItem("darkMode") === "true") {
     document.body.classList.add("dark");
   }
 
-  // Load from hash
-  const initialHash = window.location.hash.replace("#", "");
-  if (initialHash && document.getElementById(initialHash)) {
-    showSection(initialHash, false);
-  } else {
-    showSection("aboutme", false);
-  }
+  // Show default section
+  showSection("aboutme");
 
-  // Back/forward support
-  window.addEventListener("popstate", () => {
-    const hash = window.location.hash.replace("#", "");
-    if (hash) showSection(hash, false);
-  });
 });

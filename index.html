@@ -1,73 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bilal Shaikh</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <div class="main">
     <!-- LEFT SIDEBAR -->
     <div class="left-box">
+
       <div class="intro">
-        <img src="Images/avatar.jpg" alt="Internet Error!" />
+        <img src="Images/avatar.png" alt="Bilal Shaikh - Software Engineer" loading="lazy" />
+
         <h2>Bilal Shaikh</h2>
         <p class="role">Software Engineering</p>
+
+        <div class="status-badge">
+          <span class="dot"></span>
+          Open to Work
+        </div>
+
+        <p class="availability">
+          Available for internships & full-time roles
+        </p>
       </div>
 
       <div class="links">
-        <div class="email flex">
-          <img src="Images/mail_icon.svg" alt="Internet Error!" />
+
+        <div class="flex">
+          <img src="Images/mail_icon.svg" />
           <div class="right_label">
             <p class="label">EMAIL</p>
             <p class="value">bilalshaikh66056@gmail.com</p>
           </div>
         </div>
 
-        <div class="phone flex">
-          <img src="Images/phone_icon.svg" alt="Internet Error!" />
+        <div class="flex">
+          <img src="Images/phone_icon.svg" />
           <div class="right_label">
-            <p class="label margin-6">PHONE</p>
+            <p class="label">PHONE</p>
             <p class="value">+91 9574578785</p>
           </div>
         </div>
 
-        <div class="location flex">
-          <img src="Images/location_icon.svg" alt="Internet Error!" />
+        <div class="flex">
+          <img src="Images/location_icon.svg" />
           <div class="right_label">
-            <p class="label margin-6">Location</p>
+            <p class="label">LOCATION</p>
             <p class="value">Shahpur, Ahmedabad</p>
           </div>
         </div>
+
       </div>
 
       <div class="icons">
-        <a href="https://github.com/bilalshaikh-code" target="_blank"><img src="Images/github_icon.svg" alt="Github" /></a>
-        <a href="https://www.linkedin.com/in/bilal-shaikh-342377233/" target="_blank"><img src="Images/linkedin_icon.svg" alt="LinkedIn" /></a>
-        <a href="https://www.instagram.com/bilal_shaikh_018/" target="_blank"><img src="Images/instagram_icon.svg" alt="Instagram" /></a>
+        <a href="https://github.com/bilalshaikh-code" target="_blank">
+          <img src="Images/github_icon.svg">
+        </a>
+        <a href="https://www.linkedin.com/in/bilal-shaikh-342377233/" target="_blank">
+          <img src="Images/linkedin_icon.svg">
+        </a>
       </div>
+
     </div>
 
     <!-- RIGHT CONTENT -->
     <div class="right-box">
       <!-- NAVBAR -->
       <div class="top-right">
-        <button class="hamburger" aria-label="Open mefnu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <button class="hamburger">☰</button>
 
-        <nav class="nav-menu" aria-label="Main navigation">
+        <nav class="nav-menu">
+          <button class="close-menu">✕</button>
           <ul>
             <li><a href="#aboutme" data-target="aboutme">About</a></li>
             <li><a href="#project" data-target="project">Project</a></li>
             <li><a href="#resume" data-target="resume">Resume</a></li>
             <li><a href="#contact" data-target="contact">Contact</a></li>
             <li>
-              <button class="dark-toggle" aria-label="Toggle dark mode">
-                🌙
+              <button class="dark-toggle" id="darkToggle">
+                <span class="icon moon">🌙</span>
+                <span class="icon sun">☀️</span>
               </button>
             </li>
           </ul>
@@ -75,24 +92,31 @@
       </div>
 
       <!-- ABOUT -->
-      <section id="aboutme" class="aboutme">
+      <section id="aboutme" class="active">
         <div class="about">
           <h1>About Me</h1>
           <p style="text-align: justify;">
-            I am a highly motivated MSc (CS) graduate with a strong foundation in software development, backend engineering, and database management. I have hands-on experience building scalable and secure applications through academic, personal, and final-year projects. Skilled in Python, Java, RESTful APIs, and MySQL, I focus on writing clean, modular, and maintainable code. Passionate about solving real-world problems through software, I actively apply best practices in software design, secure coding, and system architecture. I enjoy collaborating on projects that challenge my problem-solving abilities and allow me to grow as a software engineer.
+            I am a highly motivated MSc (CS) graduate with a strong foundation in software development, backend
+            engineering, and database management. I have hands-on experience building scalable and secure applications
+            through academic, personal, and final-year projects. Skilled in Python, Java, RESTful APIs, and MySQL, I
+            focus on writing clean, modular, and maintainable code. Passionate about solving real-world problems through
+            software, I actively apply best practices in software design, secure coding, and system architecture. I
+            enjoy collaborating on projects that challenge my problem-solving abilities and allow me to grow as a
+            software engineer.
           </p>
         </div>
       </section>
 
       <!-- PROJECT -->
-      <section id="project" class="project">
+      <section id="project">
         <h1>Projects</h1>
 
         <div class="project-grid">
           <!-- SecureLock -->
           <div class="project-card">
             <span class="badge in-progress">In Progress</span>
-            <img src="https://github.com/bilalshaikh-code/SecureLock/blob/main/resources/banner.png?raw=true" alt="SecureLock Screenshot">
+            <img src="https://github.com/bilalshaikh-code/SecureLock/blob/main/resources/banner.png?raw=true"
+              alt="SecureLock Screenshot">
             <div class="card-content">
               <h3>SecureLock (Final MSc Project)</h3>
               <div class="tags security">
@@ -102,17 +126,18 @@
                 <span>Access Control</span>
               </div>
               <p>
-                Final MSc (CS) project focused on secure access control, system hardening, and modern security best practices.
+                Final MSc (CS) project focused on secure access control, system hardening, and modern security best
+                practices.
               </p>
-              <a href="https://github.com/bilalshaikh-code/SecureLock" target="_blank">
-                View Source Code
+              <a href="https://github.com/bilalshaikh-code/SecureLock" class="btn-github" target="_blank">
+                <img src="Images/github_icon.svg" alt="GitHub"> View Source
               </a>
             </div>
           </div>
 
           <!-- Notes API -->
           <div class="project-card">
-            <img src="Images/notes_API.png" alt="Notes API Screenshot">
+            <img src="Images/notes_API.png" alt="Notes API Screenshot" loading="lazy">
             <div class="card-content">
               <h3>Notes API</h3>
               <div class="tags">
@@ -124,15 +149,15 @@
               <p>
                 A secure RESTful Notes API for managing user notes with authentication and clean backend architecture.
               </p>
-              <a href="https://github.com/bilalshaikh-code/Notes_API" target="_blank">
-                View Source Code
+              <a href="https://github.com/bilalshaikh-code/Notes_API" class="btn-github" target="_blank">
+                <img src="Images/github_icon.svg" alt="GitHub"> View Source
               </a>
             </div>
           </div>
 
           <!-- E-Healthcare -->
           <div class="project-card">
-            <img src="Images/E_healthcare_project.png" alt="E-Healthcare System Screenshot">
+            <img src="Images/E_healthcare_project.png" alt="E-Healthcare System Screenshot" loading="lazy">
             <div class="card-content">
               <h3>Secure E-Healthcare Management</h3>
               <div class="tags security">
@@ -142,10 +167,11 @@
                 <span>API Security</span>
               </div>
               <p>
-                Security-focused university project implementing Red, Blue, and Purple Teaming with multiple defensive controls.
+                Security-focused university project implementing Red, Blue, and Purple Teaming with multiple defensive
+                controls.
               </p>
-              <a href="https://github.com/bilalshaikh-code/e_healthcare_management" target="_blank">
-                View Source Code
+              <a href="https://github.com/bilalshaikh-code/e_healthcare_management" class="btn-github" target="_blank">
+                <img src="Images/github_icon.svg" alt="GitHub"> View Source
               </a>
             </div>
           </div>
@@ -163,27 +189,30 @@
               <p>
                 MSc (CS) project demonstrating Rubber Ducky attacks and their impact on operating system security.
               </p>
-              <a href="https://github.com/bilalshaikh-code/Rubber-Ducky-Data-threat-corrupt-OS" target="_blank">
-                View Source Code
+              <a href="https://github.com/bilalshaikh-code/Rubber-Ducky-Data-threat-corrupt-OS" class="btn-github" target="_blank">
+                <img src="Images/github_icon.svg" alt="GitHub"> View Source
               </a>
             </div>
           </div>
 
           <!-- Travel Management System -->
           <div class="project-card">
-            <img src="https://github.com/bilalshaikh-code/Travel_Management_System/blob/main/Screenshort/user_home_page.png?raw=true" alt="Travel Management System Screenshot">
+            <img
+              src="https://github.com/bilalshaikh-code/Travel_Management_System/blob/main/Screenshort/user_home_page.png?raw=true"
+              alt="Travel Management System Screenshot">
             <div class="card-content">
               <h3>Travel Management System</h3>
               <div class="tags">
-                <span>Java</span>
+                <span>Python</span>
                 <span>Database</span>
                 <span>CRUD</span>
               </div>
               <p>
-                BSc (IT) university project for managing travel bookings, destinations, and users with backend data handling.
+                BSc (IT) university project for managing travel bookings, destinations, and users with backend data
+                handling.
               </p>
-              <a href="https://github.com/bilalshaikh-code/Travel_Management_System" target="_blank">
-                View Source Code
+              <a href="https://github.com/bilalshaikh-code/Travel_Management_System" class="btn-github" target="_blank">
+                <img src="Images/github_icon.svg" alt="GitHub"> View Source
               </a>
             </div>
           </div>
@@ -191,7 +220,7 @@
       </section>
 
       <!-- RESUME -->
-      <section id="resume" class="resume">
+      <section id="resume">
         <h1>Resume</h1>
         <a class="btn" href="Asset/resume.pdf" download>Download Resume</a>
 
@@ -199,7 +228,8 @@
           <div class="timeline-header">
             <div class="timeline-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+                <path
+                  d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
               </svg>
             </div>
             <h2>Education</h2>
@@ -247,7 +277,7 @@
       </section>
 
       <!-- CONTACT -->
-      <section id="contact" class="contact">
+      <section id="contact">
         <h1>Contact</h1>
         <div class="contact-wrap">
           <div class="contact-info">
@@ -259,20 +289,19 @@
               <p><strong>Location:</strong> Shahpur, Ahmedabad</p>
             </div>
             <div class="social-links">
-              <a href="https://github.com/bilalshaikh-code" target="_blank"><img src="Images/github_icon.svg" alt="Github"></a>
-              <a href="https://www.linkedin.com/in/bilal-shaikh-342377233/" target="_blank"><img src="Images/linkedin_icon.svg" alt="LinkedIn"></a>
-              <a href="https://www.instagram.com/bilal_shaikh_018/" target="_blank"><img src="Images/instagram_icon.svg" alt="Instagram"></a>
+              <a href="https://github.com/bilalshaikh-code" target="_blank"><img src="Images/github_icon.svg"
+                  alt="Github"></a>
+              <a href="https://www.linkedin.com/in/bilal-shaikh-342377233/" target="_blank"><img
+                  src="Images/linkedin_icon.svg" alt="LinkedIn"></a>
+              <a href="https://www.instagram.com/bilal_shaikh_018/" target="_blank"><img src="Images/instagram_icon.svg"
+                  alt="Instagram"></a>
             </div>
           </div>
 
           <div class="contact-map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.0000000000005!2d72.0000000000001!3d23.0000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e000000000001%3A0x0000000000000000!2sShahpur%2C%20Ahmedabad!5e0!3m2!1sen!2sin!4v0000000000000"
-              width="100%"
-              height="100%"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
@@ -283,4 +312,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
