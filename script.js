@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const navLinks = document.querySelectorAll(".nav-menu a[data-target]");
+  const contactLink = document.querySelectorAll(".about-container a[data-target]");
   const sections = document.querySelectorAll("section");
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
@@ -27,6 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.remove("open");
     });
   });
+
+  contactLink.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      showSection(link.dataset.target);
+      navMenu.classList.remove("open");
+    });
+  })
 
   // Hamburger menu toggle
   hamburger.addEventListener("click", () => {
@@ -58,4 +67,89 @@ document.addEventListener("DOMContentLoaded", () => {
   // Show default section
   showSection("aboutme");
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const messageInput = document.getElementById("message");
+  const statusMsg = document.getElementById("formStatus");
+
+  // Helper: Validate email
+  const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  // Helper: Sanitize input to prevent XSS
+  const sanitize = str => str.replace(/[<>\/'"]/g, "");
+
+  // Helper: Only letters and spaces for name
+  const isValidName = name => /^[a-zA-Z\s]+$/.test(name);
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    // Sanitize and trim values
+    const nameVal = sanitize(nameInput.value.trim());
+    const emailVal = sanitize(emailInput.value.trim());
+    const messageVal = sanitize(messageInput.value.trim());
+
+    // Name validation
+    if (!nameVal || !isValidName(nameVal) || nameVal.length > 50) {
+      nameInput.nextElementSibling.textContent = "Enter a valid name (letters only, max 50 chars)";
+      nameInput.nextElementSibling.style.display = "block";
+      valid = false;
+    } else {
+      nameInput.nextElementSibling.style.display = "none";
+    }
+
+    // Email validation
+    if (!emailVal || !isValidEmail(emailVal) || emailVal.length > 100) {
+      emailInput.nextElementSibling.textContent = "Enter a valid email (max 100 chars)";
+      emailInput.nextElementSibling.style.display = "block";
+      valid = false;
+    } else {
+      emailInput.nextElementSibling.style.display = "none";
+    }
+
+    // Message validation
+    if (!messageVal || messageVal.length > 500) {
+      messageInput.nextElementSibling.textContent = "Enter a message (max 500 chars)";
+      messageInput.nextElementSibling.style.display = "block";
+      valid = false;
+    } else {
+      messageInput.nextElementSibling.style.display = "none";
+    }
+
+    if (!valid) return;
+
+    // Show sending message
+    statusMsg.style.color = "blue";
+    statusMsg.textContent = "Sending...";
+
+    try {
+      const formData = new FormData();
+      formData.append("name", nameVal);
+      formData.append("_replyto", emailVal);
+      formData.append("message", messageVal);
+
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        statusMsg.style.color = "green";
+        statusMsg.textContent = "✅ Message sent successfully!";
+        form.reset();
+      } else {
+        const data = await response.json();
+        throw new Error(data.error || "⚠️ Something went wrong. Try again!");
+      }
+    } catch (err) {
+      statusMsg.style.color = "red";
+      statusMsg.textContent = `⚠️ The form API is ongoing to building!`;
+    }
+  });
 });

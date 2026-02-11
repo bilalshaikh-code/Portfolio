@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bilal Shaikh</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Images/favicon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -78,7 +80,7 @@
           <button class="close-menu">✕</button>
           <ul>
             <li><a href="#aboutme" data-target="aboutme">About</a></li>
-            <li><a href="#project" data-target="project">Project</a></li>
+            <li><a href="#projects" data-target="projects">Project</a></li>
             <li><a href="#resume" data-target="resume">Resume</a></li>
             <li><a href="#contact" data-target="contact">Contact</a></li>
             <li>
@@ -93,220 +95,261 @@
 
       <!-- ABOUT -->
       <section id="aboutme" class="active">
-        <div class="about">
-          <h1>About Me</h1>
-          <p style="text-align: justify;">
-            I am a highly motivated MSc (CS) graduate with a strong foundation in software development, backend
-            engineering, and database management. I have hands-on experience building scalable and secure applications
-            through academic, personal, and final-year projects. Skilled in Python, Java, RESTful APIs, and MySQL, I
-            focus on writing clean, modular, and maintainable code. Passionate about solving real-world problems through
-            software, I actively apply best practices in software design, secure coding, and system architecture. I
-            enjoy collaborating on projects that challenge my problem-solving abilities and allow me to grow as a
-            software engineer.
+        <div class="about-container">
+          <!-- Intro -->
+          <h1>Hello, I’m <span class="highlight">Bilal Shaikh</span></h1>
+          <p class="intro-text">
+            I’m a <strong>Full-Stack Developer</strong> & AI enthusiast crafting modern, responsive web experiences.
+            I specialize in <span class="highlight">Django, AI integrations</span> and creating interfaces
+            that delight users.
           </p>
+
+          <!-- Key Skills -->
+          <div class="skills-container">
+            <h2>Key Skills</h2>
+            <div class="skill-tags">
+              <span>Python</span>
+              <span>HTML</span>
+              <span>JavaScript</span>
+              <span>Django Framework</span>
+              <span>AI & ML Integration</span>
+              <span>CSS Animations</span>
+            </div>
+          </div>
+
+          <!-- Achievements -->
+          <div class="highlights">
+            <h2>Highlights</h2>
+            <ul>
+              <li>Currently building a peer-to-peer learning platform using React as an open-source project</li>
+              <li>Developed malware to demonstrate real-world red teaming simulations</li>
+            </ul>
+          </div>
+
+          <!-- Fun fact / Personal touch -->
+          <div class="personal-touch">
+            <p>Outside coding, I explore <span class="highlight">AI-generated art</span>, hike mountains, and perfect my
+              latte art skills ☕️.</p>
+          </div>
+
+          <!-- CTA -->
+          <a href="#contact" data-target="contact" class="btn">Let’s Work Together</a>
         </div>
       </section>
 
       <!-- PROJECT -->
-      <section id="project">
-        <h1>Projects</h1>
+      <section id="projects">
+        <h1>My Projects</h1>
+        <p>Some of my recent works showcasing my skills and creativity.</p>
 
-        <div class="project-grid">
-          <!-- SecureLock -->
-          <div class="project-card">
-            <span class="badge in-progress">In Progress</span>
-            <img src="https://github.com/bilalshaikh-code/SecureLock/blob/main/resources/banner.png?raw=true"
-              alt="SecureLock Screenshot">
-            <div class="card-content">
-              <h3>SecureLock (Final MSc Project)</h3>
-              <div class="tags security">
-                <span>OWASP</span>
-                <span>RBAC</span>
-                <span>Encryption</span>
-                <span>Access Control</span>
-              </div>
-              <p>
-                Final MSc (CS) project focused on secure access control, system hardening, and modern security best
-                practices.
-              </p>
-              <a href="https://github.com/bilalshaikh-code/SecureLock" class="btn-github" target="_blank">
-                <img src="Images/github_icon.svg" alt="GitHub"> View Source
-              </a>
-            </div>
-          </div>
+        <div class="project">
+          <div class="project-grid">
 
-          <!-- Notes API -->
-          <div class="project-card">
-            <img src="Images/notes_API.png" alt="Notes API Screenshot" loading="lazy">
-            <div class="card-content">
-              <h3>Notes API</h3>
-              <div class="tags">
-                <span>REST API</span>
-                <span>Authentication</span>
-                <span>MySQL</span>
-                <span>End to End Encryption</span>
+            <!-- Project Card 1 -->
+            <div class="project-card">
+              <img src="https://github.com/bilalshaikh-code/SecureLock/blob/main/resources/banner.png?raw=true" alt="Project 1" loading="lazy">
+              <div class="card-content">
+                <h3>SecureLock (Final MSc Project)</h3>
+                <p>Final MSc (CS) project focused on secure access control, system hardening, and modern security best
+                practices.</p>
+                <div class="tags">
+                  <span>Python</span>
+                  <span>Windows 10/11</span>
+                  <span>Encryption</span>
+                  <span>Access Control</span>
+                </div>
+                <a href="https://github.com/bilalshaikh-code/SecureLock" target="_blank">View Source</a>
               </div>
-              <p>
-                A secure RESTful Notes API for managing user notes with authentication and clean backend architecture.
-              </p>
-              <a href="https://github.com/bilalshaikh-code/Notes_API" class="btn-github" target="_blank">
-                <img src="Images/github_icon.svg" alt="GitHub"> View Source
-              </a>
             </div>
-          </div>
 
-          <!-- E-Healthcare -->
-          <div class="project-card">
-            <img src="Images/E_healthcare_project.png" alt="E-Healthcare System Screenshot" loading="lazy">
-            <div class="card-content">
-              <h3>Secure E-Healthcare Management</h3>
-              <div class="tags security">
-                <span>OWASP</span>
-                <span>RBAC</span>
-                <span>Encryption</span>
-                <span>API Security</span>
+            <!-- Project Card 2 -->
+            <div class="project-card">
+              <img src="Images/notes_API.png" alt="Project 2" loading="lazy">
+              <div class="card-content">
+                <h3>Notes API</h3>
+                <p>A secure RESTful Notes API for managing user notes with authentication and clean backend architecture.
+                </p>
+                <div class="tags">
+                  <span>REST API</span>
+                  <span>Authentication</span>
+                  <span>MySQL</span>
+                  <span>End to End Encryption</span>
+                </div>
+                <a href="https://github.com/bilalshaikh-code/Notes_API" target="_blank">View Source</a>
               </div>
-              <p>
-                Security-focused university project implementing Red, Blue, and Purple Teaming with multiple defensive
-                controls.
-              </p>
-              <a href="https://github.com/bilalshaikh-code/e_healthcare_management" class="btn-github" target="_blank">
-                <img src="Images/github_icon.svg" alt="GitHub"> View Source
-              </a>
             </div>
-          </div>
 
-          <!-- Rubber Ducky -->
-          <div class="project-card">
-            <img src="Images/rubber_ducky.png" alt="Rubber Ducky Attack Screenshot">
-            <div class="card-content">
-              <h3>Rubber Ducky Data Threat</h3>
-              <div class="tags">
-                <span>Physical Attacks</span>
-                <span>OS Security</span>
-                <span>Threat Modeling</span>
+            <!-- Project Card 3 -->
+            <div class="project-card">
+              <img src="Images/E_healthcare_project.png" alt="Project 3" loading="lazy">
+              <div class="card-content">
+                <h3>Secure E-Healthcare Management</h3>
+                <p>Security-focused university project implementing Red, Blue, and Purple Teaming with multiple defensive
+                controls.</p>
+                <div class="tags">
+                  <span>OWASP</span>
+                  <span>RBAC</span>
+                  <span>Encryption</span>
+                  <span>API Security</span>
+                </div>
+                <a href="https://github.com/bilalshaikh-code/e_healthcare_management" target="_blank">View Source</a>
               </div>
-              <p>
-                MSc (CS) project demonstrating Rubber Ducky attacks and their impact on operating system security.
-              </p>
-              <a href="https://github.com/bilalshaikh-code/Rubber-Ducky-Data-threat-corrupt-OS" class="btn-github" target="_blank">
-                <img src="Images/github_icon.svg" alt="GitHub"> View Source
-              </a>
             </div>
-          </div>
 
-          <!-- Travel Management System -->
-          <div class="project-card">
-            <img
-              src="https://github.com/bilalshaikh-code/Travel_Management_System/blob/main/Screenshort/user_home_page.png?raw=true"
-              alt="Travel Management System Screenshot">
-            <div class="card-content">
-              <h3>Travel Management System</h3>
-              <div class="tags">
-                <span>Python</span>
-                <span>Database</span>
-                <span>CRUD</span>
+            <!-- Project Card 4 -->
+            <div class="project-card">
+              <img src="Images/rubber_ducky.png" alt="Project 4" loading="lazy">
+              <div class="card-content">
+                <h3>Rubber Ducky Data Threat</h3>
+                <p>MSc (CS) project demonstrating Rubber Ducky attacks and their impact on operating system security.</p>
+                <div class="tags">
+                  <span>Physical Attacks</span>
+                  <span>OS Security</span>
+                  <span>Threat Modeling</span>
+                </div>
+                <a href="https://github.com/bilalshaikh-code/Rubber-Ducky-Data-threat-corrupt-OS" target="_blank">View Source</a>
               </div>
-              <p>
-                BSc (IT) university project for managing travel bookings, destinations, and users with backend data
-                handling.
-              </p>
-              <a href="https://github.com/bilalshaikh-code/Travel_Management_System" class="btn-github" target="_blank">
-                <img src="Images/github_icon.svg" alt="GitHub"> View Source
-              </a>
             </div>
+
+            <!-- Project Card 5 -->
+            <div class="project-card">
+              <img src="https://github.com/bilalshaikh-code/Travel_Management_System/blob/main/Screenshort/user_home_page.png?raw=true" alt="Project 5" loading="lazy">
+              <div class="card-content">
+                <h3>Travel Management System</h3>
+                <p>BSc (IT) university project for managing travel bookings, destinations, and users with backend data
+                handling.</p>
+                <div class="tags">
+                  <span>Django Framework</span>
+                  <span>Bootstrap</span>
+                  <span>Database</span>
+                  <span>CRUD</span>
+                </div>
+                <a href="https://github.com/bilalshaikh-code/Travel_Management_System" target="_blank">View Source</a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
       <!-- RESUME -->
       <section id="resume">
-        <h1>Resume</h1>
-        <a class="btn" href="Asset/resume.pdf" download>Download Resume</a>
+        <h1>My Resume</h1>
+        <p>Overview of my education, skills and certificate.</p>
 
-        <div class="timeline">
-          <div class="timeline-header">
-            <div class="timeline-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
-              </svg>
+        <!-- Download Resume Button -->
+        <a href="Asset/resume.pdf" class="btn" download>Download Resume</a>
+
+        <div class="resume">
+
+          <!-- EDUCATION -->
+          <h2>Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>MSc (Cyber Security) — LJ University</h3>
+                <span class="timeline-year">2024 - 2026</span>
+                <p>MSc in Cyber Security with focus on penetration testing and cybersecurity.</p>
+              </div>
             </div>
-            <h2>Education</h2>
-          </div>
 
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>MSc (CS) — LJ University</h3>
-              <span class="timeline-year">2024 — 2026</span>
-              <p>MSc in Cyber Security with focus on penetration testing and cybersecurity.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>BSc (IT) — LJ University</h3>
-              <span class="timeline-year">2021 — 2024</span>
-              <p>Completed BSc in Information Technology with practical projects in web development.</p>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>BSc (Information Technology) — LJ University</h3>
+                <span class="timeline-year">2021 - 2024</span>
+                <p>Completed BSc in Information Technology with practical projects in web development.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="skills">
+          <!-- SKILLS -->
           <h2>Skills</h2>
-          <div class="skill-tags">
-            <span>Python</span>
-            <span>Java</span>
-            <span>SQL</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>MySQL</span>
-            <span>MongoDB</span>
-            <span>Data Structures & Algorithms</span>
-            <span>Object-Oriented Programming</span>
-            <span>REST APIs</span>
-            <span>Backend Development</span>
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>Linux</span>
+          <div class="skills">
+            <div class="skill-tags">
+              <span>Python</span>
+              <span>Java</span>
+              <span>SQL</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>MySQL</span>
+              <span>MongoDB</span>
+              <span>Data Structures & Algorithms</span>
+              <span>Object-Oriented Programming</span>
+              <span>REST APIs</span>
+              <span>Backend Development</span>
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>Linux</span>
+            </div>
           </div>
+
         </div>
       </section>
 
       <!-- CONTACT -->
       <section id="contact">
-        <h1>Contact</h1>
-        <div class="contact-wrap">
-          <div class="contact-info">
-            <h2>Get In Touch</h2>
-            <p>Feel free to contact me for project work or collaboration.</p>
-            <div class="info-box">
-              <p><strong>Email:</strong> bilalshaikh66056@gmail.com</p>
-              <p><strong>Phone:</strong> +91 9574578785</p>
-              <p><strong>Location:</strong> Shahpur, Ahmedabad</p>
-            </div>
-            <div class="social-links">
-              <a href="https://github.com/bilalshaikh-code" target="_blank"><img src="Images/github_icon.svg"
-                  alt="Github"></a>
-              <a href="https://www.linkedin.com/in/bilal-shaikh-342377233/" target="_blank"><img
-                  src="Images/linkedin_icon.svg" alt="LinkedIn"></a>
-              <a href="https://www.instagram.com/bilal_shaikh_018/" target="_blank"><img src="Images/instagram_icon.svg"
-                  alt="Instagram"></a>
-            </div>
+        <div class="contact-container">
+          <h1>Contact Me</h1>
+          <p>Feel free to reach out for collaborations, projects, or just to say hi!</p>
+
+          <!-- Contact Form First -->
+          <div class="contact-form">
+            <form id="contactForm" action="" method="POST" novalidate>
+    <div class="form-group">
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+      <small class="error-msg">Please enter your name</small>
+    </div>
+    
+    <div class="form-group">
+      <input type="email" name="_replyto" id="email" placeholder="Your Email" required>
+      <small class="error-msg">Please enter a valid email</small>
+    </div>
+    
+    <div class="form-group">
+      <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+      <small class="error-msg">Please enter a message</small>
+    </div>
+
+    <button type="submit" class="btn">Send Message</button>
+    <p id="formStatus"></p>
+  </form>
           </div>
 
-          <div class="contact-map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.0000000000005!2d72.0000000000001!3d23.0000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e000000000001%3A0x0000000000000000!2sShahpur%2C%20Ahmedabad!5e0!3m2!1sen!2sin!4v0000000000000"
-              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+          <!-- Contact Info + Map Below Form -->
+          <div class="contact-wrap">
+            <!-- Contact Info -->
+            <div class="contact-info">
+              <div class="info-box">
+                <p><strong>Email:</strong> <a href="mailto:bilalshaikh66056@gmail.com">bilalshaikh66056@gmail.com</a></p>
+                <p><strong>Phone:</strong> +91 9574578785</p>
+                <p><strong>Location:</strong> Ahmedabad, Gujrat, India.</p>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank"><img src="Images/github_icon.svg"
+                    alt="GitHub"></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><img src="Images/linkedin_icon.svg"
+                    alt="LinkedIn"></a>
+                <a href="https://twitter.com/yourusername" target="_blank"><img src="Images/instagram_icon.svg"
+                    alt="Instagram"></a>
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019128196927!2d-122.41941508468107!3d37.77492977975995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085814d1e5c2f3f%3A0x36b1c7bfa5f0a0!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1698845169647!5m2!1sen!2sus"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
           </div>
         </div>
       </section>
+
     </div>
   </div>
 
