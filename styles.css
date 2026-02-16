@@ -775,10 +775,21 @@ body.dark .skill-tags span {
   left: 0;
 }
 
+.success{
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #4CAF50; /* Green background for success */
+  color: white !important;
+  border-radius: 5px;
+}
+
+.error{
+  color: #D9534F;
+}
+
 #formStatus {
   margin-top: 12px;
   font-weight: 600;
-  color: green;
 }
 
 

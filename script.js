@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   // Helper: Sanitize input to prevent XSS
-  const sanitize = str => str.replace(/[<>\/'"]/g, "");
+  const sanitize = str => /[<>\/'"]/g.test(str);
 
   // Helper: Only letters and spaces for name
   const isValidName = name => /^[a-zA-Z\s]+$/.test(name);
@@ -90,12 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let valid = true;
 
     // Sanitize and trim values
-    const nameVal = sanitize(nameInput.value.trim());
-    const emailVal = sanitize(emailInput.value.trim());
-    const messageVal = sanitize(messageInput.value.trim());
+    const nameVal = nameInput.value.trim();
+    const emailVal = emailInput.value.trim();
+    const messageVal = messageInput.value.trim();
 
     // Name validation
-    if (!nameVal || !isValidName(nameVal) || nameVal.length > 50) {
+    if (!nameVal || nameVal.length < 3 || !isValidName(nameVal) || nameVal.length > 50) {
       nameInput.nextElementSibling.textContent = "Enter a valid name (letters only, max 50 chars)";
       nameInput.nextElementSibling.style.display = "block";
       valid = false;
@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Email validation
-    if (!emailVal || !isValidEmail(emailVal) || emailVal.length > 100) {
-      emailInput.nextElementSibling.textContent = "Enter a valid email (max 100 chars)";
+    if (!emailVal || !isValidEmail(emailVal) || emailVal.length > 200) {
+      emailInput.nextElementSibling.textContent = "Enter a valid email (max 200 chars)";
       emailInput.nextElementSibling.style.display = "block";
       valid = false;
     } else {
@@ -113,8 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Message validation
-    if (!messageVal || messageVal.length > 500) {
-      messageInput.nextElementSibling.textContent = "Enter a message (max 500 chars)";
+    if (!messageVal || sanitize(messageVal) || messageVal.length > 500) {
+      messageInput.nextElementSibling.textContent = "Enter a valid message (max 500 chars)";
       messageInput.nextElementSibling.style.display = "block";
       valid = false;
     } else {
@@ -140,15 +140,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (response.ok) {
-        statusMsg.style.color = "green";
-        statusMsg.textContent = "✅ Message sent successfully!";
+        statusMsg.style.color = "";
+        statusMsg.classList.add("success")
+        statusMsg.textContent = "Message sent successfully!";
         form.reset();
       } else {
         const data = await response.json();
         throw new Error(data.error || "⚠️ Something went wrong. Try again!");
       }
     } catch (err) {
-      statusMsg.style.color = "red";
+      statusMsg.style.color = "";
+      statusMsg.classList.add("error")
       statusMsg.textContent = `⚠️ The form API is ongoing to building!`;
     }
   });
