@@ -155,3 +155,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.querySelectorAll('.highlight-card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.highlight-card').forEach(c => {
+      if (c !== card) {
+        c.style.opacity = '0.45';
+        c.style.transform = 'scale(0.98)';
+        c.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+      }
+    });
+  });
+  card.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.highlight-card').forEach(c => {
+      c.style.opacity = '1';
+      c.style.transform = 'scale(1)';
+    });
+  });
+});
